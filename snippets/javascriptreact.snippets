@@ -1,0 +1,1449 @@
+snippet import
+alias imp
+  import ${2:moduleName} from '${1:module}'${0}
+
+
+snippet importNoModuleName
+alias imn
+  import '${1:module}'${0}
+
+
+snippet importDestructing
+alias imd
+  import { $2 } from '${1:module}'${0}
+
+
+snippet importEverything
+alias ime
+  import * as ${2:alias} from '${1:module}'${0}
+
+
+snippet importAs
+alias ima
+  import { ${2:originalName} as ${3:alias} } from '${1:module}'${0}
+
+
+snippet exportDefault
+alias exp
+  export default $1${0}
+
+
+snippet exportDestructing
+alias exd
+  export { $2 } from '${1:module}'${0}
+
+
+snippet exportAs
+alias exa
+  export { ${2:originalName} as ${3:alias} } from '${1:module}'${0}
+
+
+snippet exportNamedFunction
+alias enf
+abbr Export named function in ES7 syntax
+  export const ${1:functionName} = (${2:params}) => {
+    ${0}
+  }
+  
+
+
+
+snippet exportDefaultFunction
+alias edf
+abbr Export default function in ES7 syntax
+  export default (${1:params}) => {", "  ${0}", "}
+
+
+snippet method
+alias met
+abbr Creates a method inside a class in ES7 syntax
+  ${1:methodName} = (${2:params}) => {", "  ${0}", "}
+
+
+snippet propertyGet
+alias pge
+abbr Creates a getter property inside a class in ES7 syntax
+  get ${1:propertyName}() {", "  return this.${0}", "}
+
+
+snippet propertySet
+alias pse
+abbr Creates a setter property inside a class in ES7 syntax
+  set ${1:propertyName}(${2:value}) {", "  ${0}", "}
+
+
+snippet forEach
+alias fre
+abbr Creates a forEach statement in ES7 syntax
+  ${1:array}.forEach(${2:currentItem} => {", "  ${0}", "})
+
+
+snippet forOf
+alias fof
+abbr Iterating over property names of iterable objects
+  for(let ${1:item} of ${2:object}) {", "  ${0}", "}
+
+
+snippet forIn
+alias fin
+abbr Iterating over property values of iterable objects
+  for(let ${1:item} in ${2:object}) {", "  ${0}", "}
+
+
+snippet anonymousFunction
+alias anfn
+abbr Creates an anonymous function in ES7 syntax
+  (${1:params}) => {", "  ${2}", "}
+
+
+snippet namedFunction
+alias nfn
+abbr Creates a named function in ES7 syntax
+  const ${1:name} = (${2:params}) => {", "  ${3}", "}
+
+
+snippet destructingObject
+alias dob
+abbr Creates and assigns a local variable using object destructing
+  const {${1:propertyName}} = ${2:objectToDestruct}
+
+
+snippet destructingArray
+alias dar
+abbr Creates and assigns a local variable using array destructing
+  const [${1:propertyName}] = ${2:arrayToDestruct}
+
+
+snippet setInterval
+alias sti
+abbr Executes the given function at specified intervals in ES7 syntax
+  setInterval(() => {", "  ${2}", "}, ${0:intervalInms})
+
+
+snippet setTimeOut
+alias sto
+abbr Executes the given function after the specified delay in ES7 syntax
+  setTimeout(() => {", "  ${2}", "}, ${1:delayInms})
+
+
+snippet promise
+alias prom
+abbr Creates and returns a new Promise in the standard ES7 syntax
+  return new Promise((resolve, reject) => {", "  ${1}", "})
+
+
+snippet consoleAssert
+alias cas
+abbr If the specified expression is false, the message is written to the console along with a stack trace
+  console.assert(${1:expression}, ${2:object})
+
+
+snippet consoleClear
+alias ccl
+abbr Clears the console
+  console.clear()
+
+
+snippet consoleCount
+alias cco
+abbr Writes the the number of times that count() has been invoked at the same line and with the same label
+  console.count(${1:label})
+
+
+snippet consoleDir
+alias cdi
+abbr Prints a JavaScript representation of the specified object
+  console.dir(${1:object})
+
+
+snippet consoleError
+alias cer
+abbr Displays a message in the console and also includes a stack trace from where the method was called
+  console.error(${1:object})
+
+
+snippet consoleGroup
+alias cgr
+abbr Groups and indents all following output by an additional level, until console.groupEnd() is called.
+  console.group(\"${1:label}\")
+
+
+snippet consoleGroupEnd
+alias cge
+abbr Closes out the corresponding console.group().
+  console.groupEnd()
+
+
+snippet consoleLog
+alias clg
+abbr Displays a message in the console
+  console.log(${1:object})
+
+
+snippet consoleTrace
+alias ctr
+abbr Prints a stack trace from the point where the method was called
+  console.trace(${1:object})
+
+
+snippet consoleLogObject
+alias clo
+abbr Logs property with name.
+  console.log('${1:object}', ${1:object})
+
+
+snippet consoleTime
+alias ctm
+abbr Console time wrapper
+  console.time('${1:object}')
+
+
+snippet consoleTimeEnd
+alias cte
+abbr Console time end wrapper
+  console.timeEnd('${1:object}')
+
+
+snippet consoleWarn
+alias cwa
+abbr Displays a message in the console but also displays a yellow warning icon along with the logged message
+  console.warn(${1:object})
+
+
+snippet consoleInfo
+alias cin
+abbr Displays a message in the console but also displays a blue information icon along with the logged message
+  console.info(${1:object})
+
+
+snippet destructProps
+alias cp
+abbr Creates and assigns a local variable using props destructing
+  const { $1 } = this.props
+
+
+snippet destructState
+alias cs
+abbr Creates and assigns a local variable using state destructing
+  const { $1 } = this.state
+
+
+snippet imr
+abbr import React
+  import React from 'react'
+
+
+snippet imrd
+abbr import ReactDOM
+  import ReactDOM from 'react-dom'
+
+
+snippet imrc
+abbr import React, { Component }
+  import React, { Component } from 'react'
+
+
+snippet imrcp
+abbr import React, { Component } & PropTypes
+  import React, { Component } from 'react'
+  import PropTypes from 'prop-types'
+  
+
+
+snippet imrpc
+abbr import React, { PureComponent }
+  import React, { PureComponent } from 'react'
+
+
+snippet imrpcp
+abbr import React, { PureComponent } & PropTypes
+  import React, { PureComponent } from 'react'
+  import PropTypes from 'prop-types'
+  
+
+
+snippet imrm
+abbr import React, { memo }
+  import React, { memo } from 'react'
+
+
+snippet imrmp
+abbr import React, { memo } & PropTypes
+  import React, { memo } from 'react'
+  import PropTypes from 'prop-types'
+  
+
+
+snippet imrs
+abbr import React, {useState}
+  import React, { useState } from 'react'
+
+
+snippet imrse
+abbr import React, {useState, useEffect}
+  import React, { useState, useEffect } from 'react'
+
+
+snippet impt
+abbr import PropTypes
+  import PropTypes from 'prop-types'
+
+
+snippet imrr
+abbr import React Router
+  import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
+  
+
+
+snippet imbr
+abbr import React Browser Router
+  import { BrowserRouter as Router } from 'react-router-dom'
+
+
+snippet imbrr
+abbr import React Browser Router - Route
+  import { Route } from 'react-router-dom'
+
+
+snippet imbrc
+abbr import React Browser Router - Route Combo
+  import { Route, Switch, NavLink, Link } from 'react-router-dom'
+  
+
+
+snippet imbrs
+abbr import React Browser Router - Switch
+  import { Switch } from 'react-router-dom'
+
+
+snippet imbrl
+abbr import React Browser Router - Link
+  import { Link } from 'react-router-dom'
+
+
+snippet imbrnl
+abbr import React Browser Router - NavLink
+  import { NavLink } from 'react-router-dom'
+
+
+snippet redux
+abbr import redux statement
+  import { connect } from 'react-redux'
+
+
+snippet reactClassCompoment
+alias rcc
+abbr Creates a React component class with ES7 module system
+  import React, { Component } from 'react'
+  
+  export default class ${1} extends Component {
+    render() {
+      return (
+        <div>
+          ${0}
+        </div>
+      )
+    }
+  }
+
+
+snippet reactClassExportComponent
+alias rce
+abbr Creates a React component class with ES7 module system
+  import React, { Component } from 'react'
+  
+  export class ${1} extends Component {
+    render() {
+      return (
+        <div>
+          ${0}
+        </div>
+      )
+    }
+  }
+  
+  export default $1
+
+
+snippet reactFunctionalExportComponent
+alias rfce
+abbr Creates a React Functional Component with ES7 module system
+  import React from 'react'
+  
+  function ${1}() {
+    return (
+      <div>
+        ${0}
+      </div>
+    )
+  }
+  
+  export default $1
+
+
+snippet reactFunctionalComponent
+alias rfc
+abbr Creates a React Functional Component with ES7 module system
+  import React from 'react'
+  
+  export default function ${1}() {
+    return (
+      <div>
+        ${0}
+      </div>
+    )
+  }
+
+
+snippet reactFunctionalComponentWithPropTypes
+alias rfcp
+abbr Creates a React Functional Component with ES7 module system with PropTypes
+  import React from 'react'
+  import PropTypes from 'prop-types'
+  
+  function ${1}(props) {
+    return (
+      <div>
+        ${0}
+      </div>
+    )
+  }
+  
+  $1.propTypes = {
+  
+  }
+  
+  export default $1
+
+
+snippet reactArrowFunctionExportComponent
+alias rafce
+abbr Creates a React Arrow Function Component with ES7 module system
+  import React from 'react'
+  
+  const ${1} = () => {
+    return (
+      <div>
+        ${0}
+      </div>
+    )
+  }
+  
+  export default $1
+
+
+snippet reactArrowFunctionComponent
+alias rafc
+abbr Creates a React Arrow Function Component with ES7 module system
+  import React from 'react'
+  
+  export const ${1} = () => {
+    return (
+      <div>
+        ${0}
+      </div>
+    )
+  }
+
+
+snippet reactArrowFunctionComponentWithPropTypes
+alias rafcp
+abbr Creates a React Arrow Function Component with ES7 module system with PropTypes
+  import React from 'react'
+  import PropTypes from 'prop-types'
+  
+  const ${1} = props => {
+    return (
+      <div>
+        ${0}
+      </div>
+    )
+  }
+  
+  $1.propTypes = {
+  
+  }
+  
+  export default $1
+
+
+snippet reactClassExportComponentWithPropTypes
+alias rcep
+abbr Creates a React component class with ES7 module system
+  import React, { Component } from 'react'
+  import PropTypes from 'prop-types'
+  
+  export class ${1} extends Component {
+    static propTypes = {
+  
+    }
+  
+    render() {
+      return (
+        <div>
+          ${0}
+        </div>
+      )
+    }
+  }
+  
+  export default $1
+
+
+snippet reactClassPureComponent
+alias rpc
+abbr Creates a React pure component class with ES7 module system
+  import React, { PureComponent } from 'react'
+  
+  export default class ${1} extends PureComponent {
+    render() {
+      return (
+        <div>
+          ${0}
+        </div>
+      )
+    }
+  }
+
+
+snippet reactClassExportPureComponent
+alias rpce
+abbr Creates a React pure component class with ES7 module system export
+  import React, { PureComponent } from 'react'
+  
+  export class ${1} extends PureComponent {
+    render() {
+      return (
+        <div>
+          ${0}
+        </div>
+      )
+    }
+  }
+  
+  export default ${1:$TM_FILENAME_BASE}
+
+
+snippet reactClassPureComponentWithPropTypes
+alias rpcp
+abbr Creates a React component class with ES7 module system
+  import React, { PureComponent } from 'react'
+  import PropTypes from 'prop-types'
+  
+  export default class ${1} extends PureComponent {
+    static propTypes = {
+  
+    }
+  
+    render() {
+      return (
+        <div>
+          ${0}
+        </div>
+      )
+    }
+  }
+
+
+snippet reactFunctionMemoComponent
+alias rmc
+abbr Creates a React Memo Function Component with ES7 module system
+  import React, { memo } from 'react'
+  
+  export default memo(function ${1}() {
+    return (
+      <div>
+        ${0}
+      </div>
+    )
+  })
+
+
+snippet reactFunctionMemoComponentWithPropTypes
+alias rmcp
+abbr Creates a React Memo Function Component with ES7 module system with PropTypes
+  import React, { memo } from 'react'
+  import PropTypes from 'prop-types'
+  
+  const ${1} = memo(function $1(props) {
+    return (
+      <div>
+        ${0}
+      </div>
+    )
+  })
+  
+  $1.propTypes = {
+  
+  }
+  
+  export default $1
+
+
+snippet reactClassCompomentPropTypes
+alias rccp
+abbr Creates a React component class with PropTypes and ES7 module system
+  import React, { Component } from 'react'
+  import PropTypes from 'prop-types'
+  
+  export default class ${1} extends Component {
+    static propTypes = {
+      ${2:prop}: ${3:PropTypes}
+    }
+  
+    render() {
+      return (
+        <div>
+          ${0}
+        </div>
+      )
+    }
+  }
+
+
+snippet reactClassCompomentRedux
+alias rcredux
+abbr Creates a React component class with connected redux and ES7 module system
+  import React, { Component } from 'react'
+  import { connect } from 'react-redux'
+  
+  export class ${1} extends Component {
+    render() {
+      return (
+        <div>
+          ${0}
+        </div>
+      )
+    }
+  }
+  
+  const mapStateToProps = (state) => ({
+    
+  })
+  
+  const mapDispatchToProps = {
+    
+  }
+  
+  export default connect(mapStateToProps, mapDispatchToProps)($1)
+
+
+snippet reactClassCompomentReduxPropTypes
+alias rcreduxp
+abbr Creates a React component class with PropTypes with connected redux and ES7 module system
+  import React, { Component } from 'react'
+  import PropTypes from 'prop-types'
+  import { connect } from 'react-redux'
+  
+  export class ${1} extends Component {
+    static propTypes = {
+      ${2:prop}: ${3:PropTypes}
+    }
+  
+    render() {
+      return (
+        <div>
+          ${0}
+        </div>
+      )
+    }
+  }
+  
+  const mapStateToProps = (state) => ({
+    
+  })
+  
+  const mapDispatchToProps = {
+    
+  }
+  
+  export default connect(mapStateToProps, mapDispatchToProps)($1)
+
+
+snippet mappingToProps
+alias reduxmap
+  const mapStateToProps = (state) => ({
+    ${1}
+  })
+  
+  const mapDispatchToProps = {
+    
+  }
+  
+
+
+snippet classConstructor
+alias rconst
+abbr Adds a default constructor for it('', () => {})the class that contains props as arguments
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+       ${0}
+    }
+  }
+
+
+snippet emptyState
+alias est
+abbr Creates empty state object. To be used in a constructor.
+  state = {", "  $1", "}
+
+
+snippet componentWillMount
+alias cwm
+abbr DEPRECATED!!!. Invoked once, both on the client and server, immediately before the initial rendering occurs
+  componentWillMount() {", "  ${0}", "}
+
+
+snippet componentDidMount
+alias cdm
+abbr Invoked once, only on the client (not on the server), immediately after the initial rendering occurs.
+  componentDidMount() {", "  ${0}", "}
+
+
+snippet componentWillReceiveProps
+alias cwr
+abbr DEPRECATED!!!. Invoked when a component is receiving new props. This method is not called for the initial render.
+  componentWillReceiveProps(nextProps) {", "  ${0}", "}
+
+
+snippet shouldComponentUpdate
+alias scu
+abbr Invoked before rendering when new props or state are being received. 
+  shouldComponentUpdate(nextProps, nextState) {", "  ${0}", "}
+
+
+snippet componentWillUpdate
+alias cwup
+abbr DEPRECATED!!!. Invoked immediately before rendering when new props or state are being received.
+  componentWillUpdate(nextProps, nextState) {", "  ${0}", "}
+
+
+snippet componentDidUpdate
+alias cdup
+abbr Invoked immediately after the component's updates are flushed to the DOM.
+  componentDidUpdate(prevProps, prevState) {", "  ${0}", "}
+
+
+snippet componentWillUnmount
+alias cwun
+abbr Invoked immediately before a component is unmounted from the DOM.
+  componentWillUnmount() {", "  ${0}", "}
+
+
+snippet getDerivedStateFromProps
+alias gdsfp
+abbr Invoked right before calling the render method, both on the initial mount and on subsequent updates.
+  static getDerivedStateFromProps(props, state) {", "  ${1}", "}
+
+
+snippet getSnapshotBeforeUpdate
+alias gsbu
+abbr Called right before mutations are made (e.g. before the DOM is updated)
+  getSnapshotBeforeUpdate = (prevProps, prevState) => {
+    ${0}
+  }
+  
+
+
+
+snippet componentRender
+alias ren
+abbr Basic render.
+  render() {
+    return (
+      <div>
+        ${0}
+      </div>
+    )
+  }
+
+
+
+snippet createContext
+alias rcontext
+abbr Create React context
+  const ${1:contextName} = React.createContext()
+
+
+snippet createRef
+alias cref
+abbr Create ref statement used inside constructor
+  this.${1:refName}Ref = React.createRef()
+
+
+snippet forwardRef
+alias fref
+abbr Forward ref statement used inside component
+  const ref = React.createRef()
+
+
+snippet componentSetStateObject
+alias sst
+abbr Performs a shallow merge of nextState into current state
+  this.setState({${0}})
+
+
+snippet componentSetStateFunc
+alias ssf
+abbr Performs a shallow merge of nextState into current state
+  this.setState((state, props) => { return { ${0} }})
+
+
+snippet componentProps
+alias props
+abbr Access component's props
+  this.props.${0}
+
+
+snippet componentState
+alias state
+  this.state.${0}
+
+
+snippet bindThis
+alias bnd
+abbr Binds this to a method
+  this.${1:methodName} = this.${1:methodName}.bind(this)${0}
+
+
+snippet reduxAction
+alias rxaction
+  export const ${1:actionName} = (payload) => ({
+    type: ${3:type},
+    payload
+  })
+  
+
+
+snippet reduxConst
+alias rxconst
+  export const ${1:constantName} = '${1:constantName}'
+
+
+snippet reduxReducer
+alias rxreducer
+  const initialState = {
+  
+  }
+  
+  export default (state = initialState, { type, payload }) => {
+    switch (type) {
+  
+    case ${1:typeName}:
+      return { ...state, ...payload }
+  
+    default:
+      return state
+    }
+  }
+  
+
+
+snippet reduxSelector
+alias rxselect
+  import { createSelector } from 'reselect'
+  
+  export const ${1:selectorName} = state => state.${2:selector}
+  
+
+
+snippet reactNativeComponent
+alias rnc
+  import React, { Component } from 'react'
+  import { Text, View } from 'react-native'
+  
+  export default class ${1} extends Component {
+    render() {
+      return (
+        <View>
+          <Text> ${2:textInComponent} </Text>
+        </View>
+      )
+    }
+  }
+  
+
+
+snippet reactNativeComponentWithStyles
+alias rncs
+  import React, { Component } from 'react'
+  import { Text, StyleSheet, View } from 'react-native'
+  
+  export default class ${1} extends Component {
+    render() {
+      return (
+        <View>
+          <Text> ${2:textInComponent} </Text>
+        </View>
+      )
+    }
+  }
+  
+  const styles = StyleSheet.create({})
+  
+
+
+snippet reactNativeComponentExport
+alias rnce
+  import React, { Component } from 'react'
+  import { Text, View } from 'react-native'
+  
+  export class ${1} extends Component {
+    render() {
+      return (
+        <View>
+          <Text> ${2:textInComponent} </Text>
+        </View>
+      )
+    }
+  }
+  
+  export default $1
+  
+
+
+snippet reactNativePureComponent
+alias rnpc
+  import React, { PureComponent } from 'react'
+  import { Text, View } from 'react-native'
+  
+  export default class ${1} extends PureComponent {
+    render() {
+      return (
+        <View>
+          <Text> ${2:textInComponent} </Text>
+        </View>
+      )
+    }
+  }
+  
+
+
+snippet reactNativePureComponentExport
+alias rnpce
+  import React, { PureComponent } from 'react'
+  import { Text, View } from 'react-native'
+  
+  export class ${1} extends PureComponent {
+    render() {
+      return (
+        <View>
+          <Text> ${2:textInComponent} </Text>
+        </View>
+      )
+    }
+  }
+  
+  export default $1
+  
+
+
+snippet reactNativeClassComponentRedux
+alias rncredux
+abbr Creates a React Native component class with PropTypes with connected redux and ES7 module system
+  import React, { Component } from 'react'
+  import { View, Text } from 'react-native'
+  import PropTypes from 'prop-types'
+  import { connect } from 'react-redux'
+  
+  export class ${1} extends Component {
+    static propTypes = {
+      ${2:prop}: ${3:PropTypes}
+    }
+  
+    render() {
+      return (
+        <View>
+          <Text> ${2:textInComponent} </Text>
+        </View>
+      )
+    }
+  }
+  
+  const mapStateToProps = (state) => ({
+    
+  })
+  
+  const mapDispatchToProps = {
+    
+  }
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(${1})
+  
+
+
+
+snippet reactNativeArrowFunctionComponent
+alias rnf
+  import React from 'react'
+  import { View, Text } from 'react-native'
+  
+  const ${1} = () => {
+    return (
+      <View>
+        <Text>${0}</Text>
+      </View>
+    )
+  }
+  
+  export default $1
+  
+
+
+snippet reactNativeArrowFunctionComponentWithStyles
+alias rnfs
+  import React from 'react'
+  import { StyleSheet, Text, View } from 'react-native'
+  
+  const ${1} = () => {
+    return (
+      <View>
+        <Text>${0}</Text>
+      </View>
+    )
+  }
+  
+  export default $1
+  
+  const styles = StyleSheet.create({})
+  
+
+
+snippet reactNativeImport
+alias imrn
+  import { ${1:moduleName} } from 'react-native'
+
+
+snippet reactNativeStyles
+alias rnstyle
+  const styles = StyleSheet.create({", "  ${1:style}", "})
+
+
+snippet propTypeArray
+alias pta
+abbr Array prop type
+  PropTypes.array,
+
+
+snippet propTypeArrayRequired
+alias ptar
+abbr Array prop type required
+  PropTypes.array.isRequired,
+
+
+snippet propTypeBool
+alias ptb
+abbr Bool prop type
+  PropTypes.bool,
+
+
+snippet propTypeBoolRequired
+alias ptbr
+abbr Bool prop type required
+  PropTypes.bool.isRequired,
+
+
+snippet propTypeFunc
+alias ptf
+abbr Func prop type
+  PropTypes.func,
+
+
+snippet propTypeFuncRequired
+alias ptfr
+abbr Func prop type required
+  PropTypes.func.isRequired,
+
+
+snippet propTypeNumber
+alias ptn
+abbr Number prop type
+  PropTypes.number,
+
+
+snippet propTypeNumberRequired
+alias ptnr
+abbr Number prop type required
+  PropTypes.number.isRequired,
+
+
+snippet propTypeObject
+alias pto
+abbr Object prop type
+  PropTypes.object,
+
+
+snippet propTypeObjectRequired
+alias ptor
+abbr Object prop type required
+  PropTypes.object.isRequired,
+
+
+snippet propTypeString
+alias pts
+abbr String prop type
+  PropTypes.string,
+
+
+snippet propTypeStringRequired
+alias ptsr
+abbr String prop type required
+  PropTypes.string.isRequired,
+
+
+snippet propTypeNode
+alias ptnd
+abbr Anything that can be rendered: numbers, strings, elements or an array
+  PropTypes.node,
+
+
+snippet propTypeNodeRequired
+alias ptndr
+abbr Anything that can be rendered: numbers, strings, elements or an array required
+  PropTypes.node.isRequired,
+
+
+snippet propTypeElement
+alias ptel
+abbr React element prop type
+  PropTypes.element,
+
+
+snippet propTypeElementRequired
+alias ptelr
+abbr React element prop type required
+  PropTypes.element.isRequired,
+
+
+snippet propTypeInstanceOf
+alias pti
+abbr Is an instance of a class prop type
+  PropTypes.instanceOf(${0}),
+
+
+snippet propTypeInstanceOfRequired
+alias ptir
+abbr Is an instance of a class prop type required
+  PropTypes.instanceOf(${0}).isRequired,
+
+
+snippet propTypeEnum
+alias pte
+abbr Prop type limited to specific values by treating it as an enum
+  PropTypes.oneOf(['${0}']),
+
+
+snippet propTypeEnumRequired
+alias pter
+abbr Prop type limited to specific values by treating it as an enum required
+  PropTypes.oneOf(['${0}']).isRequired,
+
+
+snippet propTypeOneOfType
+alias ptet
+abbr An object that could be one of many types
+  PropTypes.oneOfType([", "  ${0}", "]),
+
+
+snippet propTypeOneOfTypeRequired
+alias ptetr
+abbr An object that could be one of many types required
+  PropTypes.oneOfType([", "  ${0}", "]).isRequired,
+
+
+snippet propTypeArrayOf
+alias ptao
+abbr An array of a certain type
+  PropTypes.arrayOf(${0}),
+
+
+snippet propTypeArrayOfRequired
+alias ptaor
+abbr An array of a certain type required
+  PropTypes.arrayOf(${0}).isRequired,
+
+
+snippet propTypeObjectOf
+alias ptoo
+abbr An object with property values of a certain type
+  PropTypes.objectOf(${0}),
+
+
+snippet propTypeObjectOfRequired
+alias ptoor
+abbr An object with property values of a certain type required
+  PropTypes.objectOf(${0}).isRequired,
+
+
+snippet propTypeShape
+alias ptsh
+abbr An object taking on a particular shape
+  PropTypes.shape({", "  ${0}", "}),
+
+
+snippet propTypeShapeRequired
+alias ptshr
+abbr An object taking on a particular shape required
+  PropTypes.shape({", "  ${0}", "}).isRequired,
+
+
+snippet propTypeExact
+alias ptex
+abbr An object with warnings on extra properties
+  PropTypes.exact({", "  ${0}", "}),
+
+
+snippet propTypeExactRequired
+alias ptexr
+abbr An object with warnings on extra properties required
+  PropTypes.exact({", "  ${0}", "}).isRequired,
+
+
+snippet staticPropTpyes
+alias ptypes
+  static propTypes = {", "${0}", "}
+
+
+snippet propTypeAny
+alias ptany
+abbr Any prop type
+  PropTypes.any,
+
+
+snippet cmmb
+abbr Comment Big Block
+  /**", " * ${0}", " */
+
+
+snippet describeBlock
+alias desc
+abbr Testing `describe` block
+  describe('$1', () => {", "  ${0}", "})
+
+
+snippet testBlock
+alias test
+abbr Testing `test` block
+  test('should $1', () => {", "  ${0}", "})
+
+
+snippet itBlock
+alias tit
+abbr Testing `it` block
+  it('should $1', () => {", "  ${0}", "})
+
+
+snippet setupReactTest
+alias stest
+  import React from 'react'
+  import renderer from 'react-test-renderer'
+  
+  import { ${1} } from '../$1'
+  
+  describe('<$1 />', () => {
+    const defaultProps = {}
+    const wrapper = renderer.create(<$1 {...defaultProps} />)
+  
+    test('render', () => {
+      expect(wrapper).toMatchSnapshot()
+    })
+  })
+  
+
+
+snippet setupReactNativeTest
+alias sntest
+  import 'react-native'
+  import React from 'react'
+  import renderer from 'react-test-renderer'
+  
+  import ${1} from '../$1'
+  
+  describe('<$1 />', () => {
+    const defaultProps = {}
+    const wrapper = renderer.create(<$1 {...defaultProps} />)
+  
+    test('render', () => {
+      expect(wrapper).toMatchSnapshot()
+    })
+  })
+  
+
+
+snippet setupReactComponentTestWithRedux
+alias srtest
+abbr Create test component
+  import React from 'react'
+  import renderer from 'react-test-renderer'
+  import { Provider } from 'react-redux'
+  
+  import store from 'src/store'
+  import { ${1} } from '../$1'
+  
+  describe('<$1 />', () => {
+    const defaultProps = {}
+    const wrapper = renderer.create(
+      <Provider store={store}>
+       <$1 {...defaultProps} />
+      </Provider>,
+    )
+  
+    test('render', () => {
+      expect(wrapper).toMatchSnapshot()
+    })
+  })
+  
+
+
+
+snippet setupReactNativeTestWithRedux
+alias snrtest
+  import 'react-native'
+  import React from 'react'
+  import renderer from 'react-test-renderer'
+  import { Provider } from 'react-redux'
+  
+  import store from 'src/store'
+  import ${1} from '../$1'
+  
+  describe('<$1 />', () => {
+    const defaultProps = {}
+    const wrapper = renderer.create(
+      <Provider store={store}>
+        <$1 {...defaultProps} />
+      </Provider>,
+    )
+  
+    test('render', () => {
+      expect(wrapper).toMatchSnapshot()
+    })
+  })
+  
+
+
+snippet graphQLForComponent
+alias graphql
+  import { compose, graphql } from 'react-apollo'
+
+
+snippet exportGraphQL
+alias expgql
+  export default compose(
+    graphql(${1:queryOrMutation}, { name: ${2:name} }),
+  )(${1})
+
+
+snippet hocComponentWithRedux
+alias hocredux
+  import React from 'react'
+  import PropTypes from 'prop-types'
+  import { connect } from 'react-redux'
+  
+  export const mapStateToProps = state => ({
+  
+  })
+  
+  export const mapDispatchToProps = {
+   
+  }
+  
+  export const ${1:hocComponentName} = (WrappedComponent) => {
+    const hocComponent = ({ ...props }) => <WrappedComponent {...props} />
+  
+    hocComponent.propTypes = {
+    }
+  
+    return hocComponent
+  }
+  
+  export default WrapperComponent => connect(mapStateToProps, mapDispatchToProps)(${1:hocComponentName}(WrapperComponent))
+  
+
+
+snippet hocComponent
+alias hoc
+  import React from 'react'
+  import PropTypes from 'prop-types'
+  
+  export default (WrappedComponent) => {
+    const hocComponent = ({ ...props }) => <WrappedComponent {...props} />
+  
+    hocComponent.propTypes = {
+    }
+  
+    return hocComponent
+  }
+  
+
+
+snippet useState
+alias useState
+  const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState(${2:initialState})
+
+
+snippet useEffect
+alias useEffect
+  useEffect(() => {
+    ${1:effect}
+    return () => {
+      ${2:cleanup}
+    }
+  }, [${3:input}])
+
+
+snippet useContext
+alias useContext
+  const ${1:context} = useContext(${2:contextValue})
+
+
+snippet useReducer
+alias useReducer
+  const [state, dispatch] = useReducer(${1:reducer}, ${2:initialState}, ${3:init})
+
+
+snippet useCallback
+alias useCallback
+  useCallback(
+    () => {
+      ${1:callback}
+    },
+    [${2:input}],
+  )
+
+
+snippet useMemo
+alias useMemo
+  useMemo(() => ${1:function}, ${2:input})
+
+
+snippet useRef
+alias useRef
+  const ${1:ref} = useRef(${2:initialValue})
+
+
+snippet useImperativeHandle
+alias useImperativeHandle
+  useImperativeHandle(
+    ${1:ref},
+    () => {
+      ${2:handler}
+    },
+    [${3:input}],
+  )
+
+
+snippet useDebugValue
+alias useDebugValue
+  useDebugValue(${1:value})
+
+
+snippet useLayoutEffect
+alias useLayoutEffect
+  useLayoutEffect(() => {
+    ${1:effect}
+    return () => {
+      ${2:cleanup}
+    };
+  }, [${3:input}])
